@@ -1,0 +1,250 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #080c14;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --bg-card-hover: rgba(26, 36, 56, 0.8);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-glow: rgba(59, 130, 246, 0.4);
+  
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  
+  --color-primary: #3b82f6;
+  --color-primary-glow: rgba(59, 130, 246, 0.15);
+  --color-success: #10b981;
+  --color-success-glow: rgba(16, 185, 129, 0.15);
+  --color-danger: #ef4444;
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+  --color-warning: #f59e0b;
+  
+  --font-family-sans: 'Outfit', sans-serif;
+  --font-family-mono: 'Space Grotesk', monospace;
+  
+  --glass-blur: blur(12px);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-family-sans);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Neon Glow Card specific borders */
+.glow-card-blue:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px var(--color-primary-glow);
+}
+.glow-card-green:hover {
+  border-color: var(--color-success);
+  box-shadow: 0 0 20px var(--color-success-glow);
+}
+.glow-card-red:hover {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 20px var(--color-danger-glow);
+}
+
+/* Buttons Styling */
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-success-custom {
+  background: linear-gradient(135deg, var(--color-success), #047857);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+.btn-success-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-danger-custom {
+  background: linear-gradient(135deg, var(--color-danger), #b91c1c);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+.btn-danger-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Form controls customization */
+.form-control-custom {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-main) !important;
+  border-radius: 8px;
+  padding: 12px;
+  transition: var(--transition-smooth);
+}
+.form-control-custom:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary-glow);
+  outline: none;
+}
+
+/* Tables style customization */
+.table-custom {
+  color: var(--text-main);
+  background-color: transparent !important;
+}
+.table-custom th {
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border-color) !important;
+  padding: 16px 12px;
+}
+.table-custom td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+.table-custom tbody tr {
+  transition: var(--transition-smooth);
+}
+.table-custom tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Stock quote tags */
+.badge-up {
+  background-color: var(--color-success-glow);
+  color: var(--color-success);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+}
+.badge-down {
+  background-color: var(--color-danger-glow);
+  color: var(--color-danger);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+}
+
+/* Font Monospace specific items */
+.mono {
+  font-family: var(--font-family-mono);
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 60px 40px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pulsing market status indicator */
+.market-status-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+  margin-right: 6px;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Floating animation */
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
